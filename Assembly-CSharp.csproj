@@ -56,14 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Damagable.cs" />
     <Compile Include="Assets\Scripts\TankController.cs" />
+    <Compile Include="Assets\Scripts\RandomParameters.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\TankMover.cs" />
     <Compile Include="Assets\Scripts\AimTurret.cs" />
-    <Compile Include="Assets\Scripts\Turret.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Damagable.cs" />
-    <Compile Include="Assets\Scripts\RandomParameters.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Sprites\Kenny Topdown Tanks Redux\License.txt" />
