@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
+    GameObject prefabExplosion;
+
     public float speed = 10;
     public int damage = 5;
     public float maxDistance = 10;
@@ -11,6 +15,8 @@ public class Bullet : MonoBehaviour
     private Vector2 startPosition;
     private float conquaredDistance = 0;
     private Rigidbody2D rb2d;
+
+    public UnityEvent OnHit = new UnityEvent();
 
     private void Awake()
     {
@@ -41,7 +47,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collider " + collision.name);
-
+        OnHit?.Invoke();
         var damagable = collision.GetComponent<Damagable>();
         if (damagable != null)
         {
