@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LeftJoystick
+  - FireButton
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -11,13 +14,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullet
+  - PlayerBullet
+  - BaseDefender
+  - Hittable
+  - DestroyableObstacles
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -38,6 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3191453445
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1378998711
+    locked: 0
+  - name: DestroyableObstacles
+    uniqueID: 1196375889
+    locked: 0
+  - name: BaseDefender
+    uniqueID: 3746658335
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

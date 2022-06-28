@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    protected FireButton fireButton;
     [SerializeField]
     public List<Transform> turretBarrels;
     [SerializeField]

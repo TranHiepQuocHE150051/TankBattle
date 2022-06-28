@@ -5,7 +5,6 @@ using UnityEngine;
 public class AimTurret : MonoBehaviour
 {
     public float turretRotationSpeed = 150;
-
     public void Aim(Vector2 inputPointerPosition)
     {
         var turretDirection = (Vector3)inputPointerPosition - transform.position;
