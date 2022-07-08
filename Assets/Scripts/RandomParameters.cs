@@ -8,8 +8,8 @@ public class RandomParameters : MonoBehaviour
     void Start()
     {
         var radius = 5;
-        Vector3 randomPositionInsideSphere = Random.insideUnitSphere * radius;
-        Vector2 randomPositionInsiedCircle = Random.insideUnitCircle * radius;
+        Vector3 randomPositionInsideSphere = Random.insideUnitSphere* radius;
+        Vector2 randomPositionInsiedCircle = Random.insideUnitCircle* radius;
         Vector3 randomPositionOnSphereSurfce = Random.onUnitSphere * radius;
 
         Quaternion randomRotation = Random.rotation;
@@ -18,6 +18,6 @@ public class RandomParameters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

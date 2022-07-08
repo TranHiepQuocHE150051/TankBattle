@@ -5,6 +5,7 @@ using UnityEngine;
 public class AIPatrolStaticBehaviour : AIBehaviour
 {
     public float patrolDelay = 4;
+
     [SerializeField]
     private Vector2 randomDirection = Vector2.zero;
     [SerializeField]
@@ -14,6 +15,7 @@ public class AIPatrolStaticBehaviour : AIBehaviour
     {
         randomDirection = Random.insideUnitCircle;
     }
+
     public override void PerformAction(TankController tank, AIDetector detector)
     {
         float angle = Vector2.Angle(tank.aimTurret.transform.right, randomDirection);

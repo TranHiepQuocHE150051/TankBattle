@@ -6,6 +6,7 @@ public class DefaultEnemyAI : MonoBehaviour
 {
     [SerializeField]
     private AIBehaviour shootBehaviour, patrolBehaviour;
+
     [SerializeField]
     private TankController tank;
     [SerializeField]
@@ -16,6 +17,7 @@ public class DefaultEnemyAI : MonoBehaviour
         detector = GetComponentInChildren<AIDetector>();
         tank = GetComponentInChildren<TankController>();
     }
+
     private void Update()
     {
         if (detector.TargetVisible)

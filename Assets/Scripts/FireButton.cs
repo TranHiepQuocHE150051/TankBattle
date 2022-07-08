@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class FireButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 {
     [HideInInspector]
     public bool Pressed;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +15,8 @@ public class AIDetector : MonoBehaviour
     private LayerMask playerLayerMask;
     [SerializeField]
     private LayerMask visibilityLayer;
-    [field:SerializeField]
+
+    [field: SerializeField]
     public bool TargetVisible { get; private set; }
     public Transform Target
     {
@@ -27,16 +27,16 @@ public class AIDetector : MonoBehaviour
             TargetVisible = false;
         }
     }
+
     private void Start()
     {
         StartCoroutine(DetectionCoroutine());
     }
+
     private void Update()
     {
         if (Target != null)
-        {
             TargetVisible = CheckTargetVisible();
-        }
     }
 
     private bool CheckTargetVisible()
@@ -46,7 +46,7 @@ public class AIDetector : MonoBehaviour
         {
             return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
         }
-        return false; 
+        return false;
     }
 
     private void DetectTarget()
@@ -59,8 +59,7 @@ public class AIDetector : MonoBehaviour
 
     private void DetectIfOutOfRange()
     {
-        if (Target == null || Target.gameObject.activeSelf == false
-            || Vector2.Distance(transform.position, Target.position) > viewRadius)
+        if (Target == null || Target.gameObject.activeSelf == false || Vector2.Distance(transform.position, Target.position) > viewRadius + 1)
         {
             Target = null;
         }
@@ -80,6 +79,7 @@ public class AIDetector : MonoBehaviour
         yield return new WaitForSeconds(detectionCheckDelay);
         DetectTarget();
         StartCoroutine(DetectionCoroutine());
+
     }
 
     private void OnDrawGizmos()

@@ -8,9 +8,12 @@ public class ObjectPool : MonoBehaviour
     protected GameObject objectToPool;
     [SerializeField]
     protected int poolSize = 10;
+
     protected Queue<GameObject> objectPool;
 
     public Transform spawnedObjectsParent;
+
+    public bool alwaysDestroy = false;
 
     private void Awake()
     {
@@ -73,7 +76,7 @@ public class ObjectPool : MonoBehaviour
         {
             if (item == null)
                 continue;
-            else if (item.activeSelf == false)
+            else if (item.activeSelf == false || alwaysDestroy)
                 Destroy(item);
             else
                 item.GetComponent<DestroyIfDisabled>().SelfDestructionEnabled = true;

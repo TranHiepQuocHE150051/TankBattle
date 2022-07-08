@@ -1,34 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+[RequireComponent(typeof(ObjectPool))]
 public class PlayerShoot : MonoBehaviour
 {
     public FireButton fireButton;
-    [SerializeField]
     public List<Transform> turretBarrels;
-    [SerializeField]
-    public GameObject bulletPrefab;
-    public float reloadDelay = 1;
+
+    public TurretData turretData;
 
     private bool canShoot = true;
     private Collider2D[] tankColliders;
     private float currentDelay = 0;
 
+    private ObjectPool bulletPool;
+    [SerializeField]
+    private int bulletPoolCount = 10;
+
+    public UnityEvent OnShoot, OnCantShoot;
+    public UnityEvent<float> OnReloading;
+
     private void Awake()
     {
         tankColliders = GetComponentsInParent<Collider2D>();
+        bulletPool = GetComponent<ObjectPool>();
+    }
+
+    private void Start()
+    {
+        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+        OnReloading?.Invoke(currentDelay);
     }
 
     private void Update()
     {
-        if(canShoot && fireButton.Pressed)
+        if (canShoot && fireButton.Pressed)
         {
             Shoot();
         }
         if (canShoot == false)
         {
             currentDelay -= Time.deltaTime;
+            OnReloading?.Invoke(currentDelay / turretData.reloadDelay);
             if (currentDelay <= 0)
             {
                 canShoot = true;
@@ -41,15 +56,18 @@ public class PlayerShoot : MonoBehaviour
         if (canShoot)
         {
             canShoot = false;
-            currentDelay = reloadDelay;
+            currentDelay = turretData.reloadDelay;
 
             foreach (var barrel in turretBarrels)
             {
-                GameObject bullet = Instantiate(bulletPrefab);
+                var hit = Physics2D.Raycast(barrel.position, barrel.up);
+                if (hit.collider != null)
+                    Debug.Log(hit.collider.name);
+                //GameObject bullet = Instantiate(bulletPrefab);
+                GameObject bullet = bulletPool.CreateObject();
                 bullet.transform.position = barrel.position;
                 bullet.transform.localRotation = barrel.rotation;
-                bullet.layer = LayerMask.NameToLayer("PlayerBullet");
-                bullet.GetComponent<Bullet>().Initialize();
+                bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
 
                 foreach (var collider in tankColliders)
                 {
@@ -57,6 +75,13 @@ public class PlayerShoot : MonoBehaviour
                 }
 
             }
+
+            OnShoot?.Invoke();
+            OnReloading?.Invoke(currentDelay);
+        }
+        else
+        {
+            OnCantShoot?.Invoke();
         }
 
     }

@@ -14,7 +14,7 @@ public class TankController : MonoBehaviour
             tankMover = GetComponentInChildren<TankMover>();
         if (aimTurret == null)
             aimTurret = GetComponentInChildren<AimTurret>();
-        if (turrets == null || turrets.Length == 0)
+        if(turrets == null || turrets.Length == 0)
         {
             turrets = GetComponentsInChildren<Turret>();
         }
@@ -37,8 +37,8 @@ public class TankController : MonoBehaviour
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
         aimTurret.Aim(pointerPosition);
-
+        
     }
 
-
+    
 }
