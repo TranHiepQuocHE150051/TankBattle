@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiShootBehaviour : AIBehaviour
+public class AIShootBehaviour : AIBehaviour
 {
     public float fieldOfVisionForShooting = 60;
 
@@ -13,7 +13,7 @@ public class AiShootBehaviour : AIBehaviour
             tank.HandleMoveBody(Vector2.zero);
             tank.HandleShoot();
         }
-            
+
         tank.HandleTurretMovement(detector.Target.position);
     }
 
