@@ -28,7 +28,7 @@ public class ObjectGeneratorRandomPositionUtil : MonoBehaviour
             impactObject.transform.rotation = Random2DRotation();
         }
     }
-
+    
     protected virtual GameObject GetObject()
     {
         return Instantiate(objectPrefab);
