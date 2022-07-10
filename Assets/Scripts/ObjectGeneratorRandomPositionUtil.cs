@@ -8,6 +8,7 @@ public class ObjectGeneratorRandomPositionUtil : MonoBehaviour
 
     public float radius = 0.2f;
 
+    public float numberOfExplotion = 1;
     protected Vector2 GetRandomPosition()
     {
         return Random.insideUnitCircle * radius + (Vector2)transform.position;
@@ -17,13 +18,15 @@ public class ObjectGeneratorRandomPositionUtil : MonoBehaviour
     {
         return Quaternion.Euler(0, 0, Random.Range(0, 360));
     }
-
     public void CreteObject()
     {
-        Vector2 position = GetRandomPosition();
-        GameObject impactObject = GetObject();
-        impactObject.transform.position = position;
-        impactObject.transform.rotation = Random2DRotation();
+        for (int i = 0; i < numberOfExplotion; i++)
+        {
+            Vector2 position = GetRandomPosition();
+            GameObject impactObject = GetObject();
+            impactObject.transform.position = position;
+            impactObject.transform.rotation = Random2DRotation();
+        }
     }
 
     protected virtual GameObject GetObject()
@@ -36,4 +39,5 @@ public class ObjectGeneratorRandomPositionUtil : MonoBehaviour
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+
 }

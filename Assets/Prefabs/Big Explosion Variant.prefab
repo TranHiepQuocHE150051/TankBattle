@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1479636594395524712, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
       propertyPath: m_Name
-      value: Big Explosion
+      value: Big Explosion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1479636594395524713, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
       propertyPath: m_Controller
