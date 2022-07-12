@@ -409,15 +409,6 @@
 "Assets/Scripts/TrackMarksSpawner.cs"
 "Assets/Scripts/Turret.cs"
 "Assets/Scripts/UiFollowTank.cs"
-"Assets/Scripts/Utils/ConfigurationData.cs"
-"Assets/Scripts/Utils/ConfigurationUtils.cs"
-"Assets/Scripts/Utils/EventManager.cs"
-"Assets/Scripts/Utils/MainMenu.cs"
-"Assets/Scripts/Utils/MenuManager.cs"
-"Assets/Scripts/Utils/MenuName.cs"
-"Assets/Scripts/Utils/PauseMenu.cs"
-"Assets/Scripts/Utils/ScreenUtils.cs"
-"Assets/Scripts/Utils/TimerFinishedEvent.cs"
 -langversion:9.0
 
 /deterministic

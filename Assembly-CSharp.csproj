@@ -100,15 +100,6 @@
     <Compile Include="Assets\Scripts\MapEditor\ScriptableLevel.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\MapEditor\TilemapManagerEditor.cs" />
-    <Compile Include="Assets\Scripts\Utils\ScreenUtils.cs" />
-    <Compile Include="Assets\Scripts\Utils\ConfigurationData.cs" />
-    <Compile Include="Assets\Scripts\Utils\ConfigurationUtils.cs" />
-    <Compile Include="Assets\Scripts\Utils\EventManager.cs" />
-    <Compile Include="Assets\Scripts\Utils\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Utils\TimerFinishedEvent.cs" />
-    <Compile Include="Assets\Scripts\Utils\MenuName.cs" />
-    <Compile Include="Assets\Scripts\Utils\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Utils\MenuManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio\Kenny Assets\InterfaceSounds\License.txt" />
