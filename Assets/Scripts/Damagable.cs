@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Damagable : MonoBehaviour
 {
     public int MaxHealth = 100;
-
+    
     [SerializeField]
     private int health = 0;
-
+    public GameObject GameOverMenu;
     public int Health
     {
         get { return health; }
@@ -37,14 +38,18 @@ public class Damagable : MonoBehaviour
         Health -= damagePoints;
         if (Health <= 0)
         {
-            OnDead?.Invoke();
+            OnDead?.Invoke();           
         }
         else
         {
             OnHit?.Invoke();
         }
     }
-
+    public void GameOver()
+    {       
+        GameOverMenu.SetActive(true);
+        Time.timeScale = 0;       
+    }   
     public void Heal(int healthBoost)
     {
         Health += healthBoost;

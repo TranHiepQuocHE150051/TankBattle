@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
     public SaveSystem saveSystem;
-
+    public GameObject mapEditor;
     private void Awake()
     {
         SceneManager.sceneLoaded += Initialize;
@@ -36,13 +36,28 @@ public class GameManager : MonoBehaviour
             return;
         }
         LoadNextLevel();
-    }
-
+    }    
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 0;
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void SelectLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     public void SaveData()
     {
         if (player != null)

@@ -6,16 +6,29 @@ public class SpawnTank : MonoBehaviour
 {
     public GameObject StaticEnemy;
     public GameObject PatrollingEnemy;
+    public int level;
     public float timer = 10;
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
+        
         // Instantiate at position (0, 0, 0) and zero rotation.
-        Instantiate(PatrollingEnemy, new Vector3(-3.91f, 10.53f, 0), Quaternion.identity);
-        Instantiate(StaticEnemy, new Vector3(4.75f, -0.22f, 0), Quaternion.identity);
-        Instantiate(StaticEnemy, new Vector3(9.3f, -1.42f, 0), Quaternion.identity);
-        Instantiate(StaticEnemy, new Vector3(-0.26f, 12.25f, 0), Quaternion.identity);
-        Instantiate(StaticEnemy, new Vector3(4.73f, 6.53f, 0), Quaternion.identity);
+        
+    }
+    public void SpawnTurret(int level)
+    {
+        switch (level)
+        {
+            case 1:
+                Instantiate(PatrollingEnemy, new Vector3(-3.91f, 10.53f, 0), Quaternion.identity);
+                Instantiate(StaticEnemy, new Vector3(4.75f, -0.22f, 0), Quaternion.identity);
+                Instantiate(StaticEnemy, new Vector3(9.3f, -1.42f, 0), Quaternion.identity);
+                Instantiate(StaticEnemy, new Vector3(-0.26f, 12.25f, 0), Quaternion.identity);
+                Instantiate(StaticEnemy, new Vector3(4.73f, 6.53f, 0), Quaternion.identity);
+                break;
+            case 2:
+                break;
+        }
     }
     private void Update()
     {

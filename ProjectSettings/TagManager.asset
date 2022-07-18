@@ -8,6 +8,7 @@ TagManager:
   - LeftJoystick
   - FireButton
   - PatrollingEnemy
+  - MapEditor
   layers:
   - Default
   - TransparentFX

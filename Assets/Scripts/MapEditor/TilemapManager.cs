@@ -11,6 +11,15 @@ public class TilemapManager : MonoBehaviour {
     [SerializeField] private Tilemap _groundMap, _detail_top, _obstacles, _crate_Woods, _details_top_small;
     [SerializeField] private int _levelIndex;
 
+    public static TilemapManager tilemapManager { get; set; }
+    private void Awake()
+    {
+        tilemapManager = this;
+    }
+    public void setLevel(int level)
+    {
+        _levelIndex = level;
+    }
     public void SaveMap() {
         var newLevel = ScriptableObject.CreateInstance<ScriptableLevel>();
 
@@ -41,6 +50,7 @@ public class TilemapManager : MonoBehaviour {
     }
 
     public void ClearMap() {
+       
         var maps = FindObjectsOfType<Tilemap>();
 
         foreach (var tilemap in maps) {
@@ -49,6 +59,7 @@ public class TilemapManager : MonoBehaviour {
     }
 
     public void LoadMap() {
+        Debug.Log("Load Map" + _levelIndex);
         var level = Resources.Load<ScriptableLevel>($"Levels/Level {_levelIndex}");
         if (level == null) {
             Debug.LogError($"Level {_levelIndex} does not exist.");
