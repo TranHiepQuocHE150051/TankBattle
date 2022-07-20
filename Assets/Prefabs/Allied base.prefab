@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7941537131211351828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.24, y: 2.2099998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8904891915972630140, guid: 600e23f9d9e39d549960df722510f11c, type: 3}
-  radius: 0.1
-  numberOfExplotion: 1
+  radius: 1.7
+  numberOfExplotion: 5
 --- !u!114 &7941537131211351825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   health: 0
+  GameOverMenu: {fileID: 0}
+  LevelCompleteMenu: {fileID: 0}
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -454,6 +456,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7941537131466144439}
         m_TargetAssemblyTypeName: DestroyUtil, Assembly-CSharp
         m_MethodName: DestroyHelper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7941537131466144426}
+        m_TargetAssemblyTypeName: Damagable, Assembly-CSharp
+        m_MethodName: GameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,22 +8,25 @@ public class AIShootBehaviour : AIBehaviour
 
     public override void PerformAction(TankController tank, AIDetector detector)
     {
-        if (TargetInFOV(tank, detector))
+        //if (TargetInFOV(tank, detector))
+        //{
+        if (detector.Target != null)
         {
-            tank.HandleMoveBody(Vector2.zero);
+            tank.HandleTurretMovement(detector.Target.position);
+        }
+        tank.HandleMoveBody(Vector2.zero);
             tank.HandleShoot();
-        }
-
-        tank.HandleTurretMovement(detector.Target.position);
+        //}
+       
     }
 
-    private bool TargetInFOV(TankController tank, AIDetector detector)
-    {
-        var direction = detector.Target.position - tank.aimTurret.transform.position;
-        if (Vector2.Angle(tank.aimTurret.transform.right, direction) < fieldOfVisionForShooting / 2)
-        {
-            return true;
-        }
-        return false;
-    }
+    //private bool TargetInFOV(TankController tank, AIDetector detector)
+    //{
+    //    var direction = detector.Target.position - tank.aimTurret.transform.position;
+    //    if (Vector2.Angle(tank.aimTurret.transform.right, direction) < fieldOfVisionForShooting / 2)
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 }

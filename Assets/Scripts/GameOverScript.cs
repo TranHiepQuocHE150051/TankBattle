@@ -5,7 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    
+    public GameObject mapEditor;
+    public GameObject levelPanel;
+    public GameObject Maincamera;
+    public void NextLevel()
+    {
+        SpawnTank spawnTank = Maincamera.GetComponent<SpawnTank>();
+        spawnTank.level += 1;
+        spawnTank.SpawnTurret(spawnTank.level);
+        spawnTank.SpawnBase(spawnTank.level);
+        Time.timeScale = 1;
+        TilemapManager tilemapManager = mapEditor.GetComponent<TilemapManager>();
+        tilemapManager.setLevel(spawnTank.level+1);
+        tilemapManager.LoadMap();
+    }
     public void ReloadGame()
     {
         Scene sceneLoaded = SceneManager.GetActiveScene();

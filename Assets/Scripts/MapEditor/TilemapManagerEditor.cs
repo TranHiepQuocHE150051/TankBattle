@@ -1,28 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEditor;
+//using UnityEngine;
 
-[CustomEditor(typeof(TilemapManager))]
-public class TilemapManagerEditor : Editor
-{
-    public override void OnInspectorGUI() {
-        DrawDefaultInspector();
+//[CustomEditor(typeof(TilemapManager))]
+//public class TilemapManagerEditor : Editor
+//{
+//    public override void OnInspectorGUI()
+//    {
+//        DrawDefaultInspector();
 
-        var script = (TilemapManager) target;
+//        var script = (TilemapManager)target;
 
-        if (GUILayout.Button("Save Map")) {
-            script.SaveMap();
-        }
+//        if (GUILayout.Button("Save Map"))
+//        {
+//            script.SaveMap();
+//        }
 
-        if (GUILayout.Button("Clear Map"))
-        {
-            script.ClearMap();
-        }
+//        if (GUILayout.Button("Clear Map"))
+//        {
+//            script.ClearMap();
+//        }
 
-        if (GUILayout.Button("Load Map"))
-        {
-            script.LoadMap();
-        }
-    }
-}
+//        if (GUILayout.Button("Load Map"))
+//        {
+//            script.LoadMap();
+//        }
+//    }
+//}

@@ -11,6 +11,7 @@ public class Damagable : MonoBehaviour
     [SerializeField]
     private int health = 0;
     public GameObject GameOverMenu;
+    public GameObject LevelCompleteMenu;
     public int Health
     {
         get { return health; }
@@ -50,6 +51,11 @@ public class Damagable : MonoBehaviour
         GameOverMenu.SetActive(true);
         Time.timeScale = 0;       
     }   
+    public void LevelComplete()
+    {
+        LevelCompleteMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
     public void Heal(int healthBoost)
     {
         Health += healthBoost;

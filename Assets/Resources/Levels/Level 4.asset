@@ -1493,8 +1493,4 @@ MonoBehaviour:
     Tile: {fileID: 11400000, guid: 16e6bf213d3af9b48bbc740ea79ea4eb, type: 2}
   - Position: {x: 11, y: 21, z: 0}
     Tile: {fileID: 11400000, guid: 16e6bf213d3af9b48bbc740ea79ea4eb, type: 2}
-  - Position: {x: 12, y: 21, z: 0}
-    Tile: {fileID: 11400000, guid: 16e6bf213d3af9b48bbc740ea79ea4eb, type: 2}
-  - Position: {x: 13, y: 21, z: 0}
-    Tile: {fileID: 11400000, guid: 16e6bf213d3af9b48bbc740ea79ea4eb, type: 2}
   Details_top_smallTiles: []
