@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b282f1a70726642bf752ed41c5c8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 40
+  MaxHealth: 20
   health: 0
   GameOverMenu: {fileID: 0}
   LevelCompleteMenu: {fileID: 0}

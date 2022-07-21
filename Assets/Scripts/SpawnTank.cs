@@ -17,10 +17,12 @@ public class SpawnTank : MonoBehaviour
     public float timer = 10;
     
     private int count = 0;
+    private int countlv1 = 0;
+    private int countlv2 = 0;
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
-
+         
         
 
     }
@@ -85,10 +87,11 @@ public class SpawnTank : MonoBehaviour
                 {
                     timer -= Time.deltaTime;
                 }
-                else if (timer < 0 && GameObject.FindGameObjectsWithTag("PatrollingEnemy").Length <= 10)
+                else if (timer < 0 &&countlv1<9 &&GameObject.FindGameObjectsWithTag("PatrollingEnemy").Length <= 10)
                 {
                     Instantiate(PatrollingEnemy, new Vector3(-3.91f, 10.53f, 0), Quaternion.identity);
-                    timer += 10;
+                    timer += 8;
+                    countlv1++;
                 }
                 break;
             case 2:
@@ -96,11 +99,12 @@ public class SpawnTank : MonoBehaviour
                 {
                     timer -= Time.deltaTime;
                 }
-                else if (timer < 0 && GameObject.FindGameObjectsWithTag("PatrollingEnemy").Length <= 10)
+                else if (timer < 0 && countlv2<10&& GameObject.FindGameObjectsWithTag("PatrollingEnemy").Length <= 10)
                 {
                     Instantiate(FastEnemy, new Vector3(-3.74f, 12.62f, 0), Quaternion.identity);
                     Instantiate(TankyEnemy, new Vector3(4.74f, 12.71f, 0), Quaternion.identity);
                     timer += 10;
+                    countlv2 += 2;
                 }
 
                 break;

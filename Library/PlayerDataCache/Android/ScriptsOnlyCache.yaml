@@ -25,7 +25,6 @@ ScriptsOnlyBuild:
     - ObjectPool
     - PatrolPath
     - PauseMenu
-    - PlayerInput
     - PlayerShoot
     - SaveSystem
     - ScriptableLevel
@@ -50,6 +49,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
@@ -103,7 +103,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.UnityEvent
     - UnityEngine.Events.UnityEvent`1[System.Boolean]
     - UnityEngine.Events.UnityEvent`1[System.Single]
-    - UnityEngine.Events.UnityEvent`1[UnityEngine.Vector2]
     - UnityEngine.RectOffset
     UnityEngine.UI:
     - UnityEngine.UI.AnimationTriggers
@@ -123,13 +122,40 @@ ScriptsOnlyBuild:
     methodName: ResetData
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
-    methodName: LoadLeve
+    methodName: LoadInstruction
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: BackToMenu
   - assembly: Assembly-CSharp
     fullTypeName: SaveSystem
     methodName: ResetData
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: LoadLevel1
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
+  - assembly: Assembly-CSharp
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: EngineAudio
     methodName: ControlEngineVolume
@@ -184,66 +210,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Pause
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: GameOverScript
     methodName: MainMenu
   - assembly: Assembly-CSharp
     fullTypeName: GameOverScript
-    methodName: NextLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
+    methodName: ReloadGame
   - assembly: Assembly-CSharp
     fullTypeName: DestroyUtil
     methodName: DestroyHelper
@@ -259,60 +231,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
   - assembly: Assembly-CSharp
     fullTypeName: EngineAudio
     methodName: ControlEngineVolume
@@ -322,18 +240,30 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: Assembly-CSharp
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
+  - assembly: Assembly-CSharp
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
   - assembly: UnityEngine.AudioModule
     fullTypeName: UnityEngine.AudioSource
     methodName: Play
@@ -349,9 +279,18 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: SelectLevel
     methodName: Level2
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Slider
     methodName: set_value
+  - assembly: Assembly-CSharp
+    fullTypeName: SelectLevel
+    methodName: MainMenu
   - assembly: Assembly-CSharp
     fullTypeName: SelectLevel
     methodName: Level1
@@ -370,75 +309,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.UI
     fullTypeName: UnityEngine.UI.Slider
     methodName: set_value
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
   - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: DestroyUtil
-    methodName: DestroyHelper
-  - assembly: Assembly-CSharp
-    fullTypeName: InstantiateUtil
-    methodName: InstantiateObject
-  - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
-  - assembly: UnityEngine.UI
-    fullTypeName: UnityEngine.UI.Slider
-    methodName: set_value
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.AudioModule
-    fullTypeName: UnityEngine.AudioSource
-    methodName: Play
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: EngineAudio
-    methodName: ControlEngineVolume
+    fullTypeName: SelectLevel
+    methodName: Level3
   - assembly: Assembly-CSharp
     fullTypeName: DestroyUtil
     methodName: DestroyHelper
@@ -455,20 +328,122 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: ObjectGeneratorRandomPositionUtil
-    methodName: CreteObject
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
   - assembly: Assembly-CSharp
     fullTypeName: InstantiateUtil
     methodName: InstantiateObject
   - assembly: Assembly-CSharp
-    fullTypeName: TankController
-    methodName: HandleShoot
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: TankController
-    methodName: HandleMoveBody
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
   - assembly: Assembly-CSharp
-    fullTypeName: TankController
-    methodName: HandleTurretMovement
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
+  - assembly: Assembly-CSharp
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DestroyUtil
+    methodName: DestroyHelper
+  - assembly: Assembly-CSharp
+    fullTypeName: InstantiateUtil
+    methodName: InstantiateObject
+  - assembly: Assembly-CSharp
+    fullTypeName: ObjectGeneratorRandomPositionUtil
+    methodName: CreteObject
+  - assembly: UnityEngine.UI
+    fullTypeName: UnityEngine.UI.Slider
+    methodName: set_value
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: EngineAudio
+    methodName: ControlEngineVolume
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.AudioModule
+    fullTypeName: UnityEngine.AudioSource
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   sceneClasses:
     Assets/Scenes/Lvl1.unity:
     - Class: 1
@@ -635,151 +610,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 1839735485
       Script: {instanceID: 0}
-    Assets/Scenes/Lvl2.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 60
-      Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
-    - Class: 66
-      Script: {instanceID: 0}
-    - Class: 70
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 648}
-    - Class: 114
-      Script: {instanceID: 1534}
-    - Class: 114
-      Script: {instanceID: 1536}
-    - Class: 114
-      Script: {instanceID: 1870}
-    - Class: 114
-      Script: {instanceID: 1882}
-    - Class: 114
-      Script: {instanceID: 1898}
-    - Class: 114
-      Script: {instanceID: 1914}
-    - Class: 114
-      Script: {instanceID: 2000}
-    - Class: 114
-      Script: {instanceID: 2070}
-    - Class: 114
-      Script: {instanceID: 2582}
-    - Class: 114
-      Script: {instanceID: 2684}
-    - Class: 114
-      Script: {instanceID: 2772}
-    - Class: 114
-      Script: {instanceID: 2812}
-    - Class: 114
-      Script: {instanceID: 2968}
-    - Class: 114
-      Script: {instanceID: 3024}
-    - Class: 114
-      Script: {instanceID: 3040}
-    - Class: 114
-      Script: {instanceID: 3122}
-    - Class: 114
-      Script: {instanceID: 3224}
-    - Class: 114
-      Script: {instanceID: 3334}
-    - Class: 114
-      Script: {instanceID: 3492}
-    - Class: 114
-      Script: {instanceID: 3518}
-    - Class: 114
-      Script: {instanceID: 3524}
-    - Class: 114
-      Script: {instanceID: 3560}
-    - Class: 114
-      Script: {instanceID: 3686}
-    - Class: 114
-      Script: {instanceID: 3840}
-    - Class: 114
-      Script: {instanceID: 4114}
-    - Class: 114
-      Script: {instanceID: 4188}
-    - Class: 114
-      Script: {instanceID: 4266}
-    - Class: 114
-      Script: {instanceID: 4400}
-    - Class: 114
-      Script: {instanceID: 4498}
-    - Class: 114
-      Script: {instanceID: 4538}
-    - Class: 114
-      Script: {instanceID: 4602}
-    - Class: 114
-      Script: {instanceID: 4636}
-    - Class: 114
-      Script: {instanceID: 4656}
-    - Class: 114
-      Script: {instanceID: 4864}
-    - Class: 114
-      Script: {instanceID: 4866}
-    - Class: 114
-      Script: {instanceID: 5198}
-    - Class: 114
-      Script: {instanceID: 5360}
-    - Class: 114
-      Script: {instanceID: 5388}
-    - Class: 114
-      Script: {instanceID: 6620}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 221
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 19719996
-      Script: {instanceID: 0}
-    - Class: 156049354
-      Script: {instanceID: 0}
-    - Class: 483693784
-      Script: {instanceID: 0}
-    - Class: 1839735485
-      Script: {instanceID: 0}
     Assets/Scenes/Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -888,7 +718,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 9e7e86fa3e054c9dced4459ae71a118d
+      Hash: a90ef08583b93b64ceb071f9bc84abba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnTank
@@ -1338,7 +1168,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrack
   - hash:
       serializedVersion: 2
-      Hash: b539653bb0352bfa5fd9ea62c72d4259
+      Hash: b8f4d9778769a151aa6ab8ed27f1cb2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1946,5 +1776,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Lvl1.unity
-  - Assets/Scenes/Lvl2.unity
-  playerPath: C:/Users/This PC/Desktop/TankBattle/tank.apk
+  playerPath: C:/Users/This PC/Desktop/tank.apk

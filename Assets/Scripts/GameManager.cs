@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
     public SaveSystem saveSystem;
-    public GameObject mapEditor;
+    public GameObject Instructions;
     private void Awake()
     {
         SceneManager.sceneLoaded += Initialize;
@@ -53,6 +53,14 @@ public class GameManager : MonoBehaviour
     public void SelectLevel()
     {
         SceneManager.LoadScene(1);
+    }
+    public void LoadInstruction()
+    {
+        Instructions.SetActive(true);
+    }
+    public void BackToMenu()
+    {
+        Instructions.SetActive(false);
     }
     public void ExitGame()
     {
